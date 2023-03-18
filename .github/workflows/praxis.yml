@@ -1,0 +1,17 @@
+name: AlgoTrader
+
+on:
+  schedule:
+    - cron: '15 5 * * 1-5'
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout algotrader repo
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
